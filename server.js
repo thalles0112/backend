@@ -105,7 +105,7 @@ server.delete('/musicas/:id', async (request, reply)=>{
 
 const start = async () => {
     try {
-      await server.listen({ host:'0.0.0.0' });
+      await server.listen({ host:'0.0.0.0', port: process.env.PORT || 4000 });
       console.log('Servidor rodando em http://localhost:3001');
     } catch (err) {
       server.log.error(err);
